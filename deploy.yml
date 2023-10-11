@@ -1,4 +1,4 @@
-- name: deploying conatiner
+- name: deploying container
   hosts: ans-host
   become: true
   
