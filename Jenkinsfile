@@ -9,8 +9,8 @@ pipeline {
                 echo "====++++executing git checkout++++===="
                 git 'https://github.com/njokuifeanyigerald/ansibleCalTech.git'
             }
-       }
-          stage('Build Package') {
+        }
+        stage('Build Package') {
             steps {
                 sh 'mvn clean install'
             }
@@ -22,7 +22,7 @@ pipeline {
                 sh 'docker tag ${JOB_NAME}:v1.${BUILD_NUMBER} bopgeek/${JOB_NAME}:latest '
             }
         }
-        stage('push conatiner') {
+        stage('push container') {
             steps{
                 withCredentials([string(credentialsId: 'dockerhub', variable: 'dockerhubcred')]) {
                   sh 'docker login -u bopgeek -p ${dockerhubcred}'
