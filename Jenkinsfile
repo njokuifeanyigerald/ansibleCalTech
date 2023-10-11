@@ -7,7 +7,7 @@ pipeline {
         stage('GIT checkout') {
            steps{
                 echo "====++++executing git checkout++++===="
-                git 'https://github.com/njokuifeanyigerald/ansible_ec2_kubernetes.git'
+                git 'https://github.com/njokuifeanyigerald/ansibleCalTech.git'
             }
        }
           stage('Build Package') {
